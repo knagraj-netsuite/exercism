@@ -8,7 +8,7 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.')
   })
 
-  xit('shouting', () => {
+  it('shouting', () => {
     const result = bob.hey('WATCH OUT!')
     expect(result).toEqual('Whoa, chill out!')
   })
