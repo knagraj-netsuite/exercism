@@ -11,6 +11,7 @@ yarn-error.log*
 
 # Dependency directories
 javascript/*/node_modules
+typescript/*/node_modules
 /jspm_packages
 /bower_components
 
