@@ -1,7 +1,16 @@
 import Bob from './bob'
+import {reactor} from "./bob";
 
 describe('Bob', () => {
-  const bob = new Bob()
+  const sureReactor: reactor = {
+    shouldApply(arg: string): boolean {
+      return arg.charAt(arg.length - 1) === '?';
+    },
+    apply(_arg: string): string {
+      return 'Sure.';
+    }
+  }
+  const bob = new Bob([sureReactor])
 
   it('stating something', () => {
     const result = bob.hey('Tom-ay-to, tom-aaaah-to.')
