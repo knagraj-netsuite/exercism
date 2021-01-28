@@ -23,37 +23,37 @@ describe('Bob', () => {
     expect(result).toEqual('Sure.')
   })
 
-  xit('asking a numeric question', () => {
+  it('asking a numeric question', () => {
     const result = bob.hey('You are, what, like 15?')
     expect(result).toEqual('Sure.')
   })
 
-  xit('asking gibberish', () => {
+  it('asking gibberish', () => {
     const result = bob.hey('fffbbcbeab?')
     expect(result).toEqual('Sure.')
   })
 
-  xit('talking forcefully', () => {
+  it('talking forcefully', () => {
     const result = bob.hey("Let's go make out behind the gym!")
     expect(result).toEqual('Whatever.')
   })
 
-  xit('using acronyms in regular speech', () => {
+  it('using acronyms in regular speech', () => {
     const result = bob.hey("It's OK if you don't want to go to the DMV.")
     expect(result).toEqual('Whatever.')
   })
 
-  xit('forceful question', () => {
+  it('forceful question', () => {
     const result = bob.hey('WHAT THE HELL WERE YOU THINKING?')
     expect(result).toEqual("Calm down, I know what I'm doing!")
   })
 
-  xit('shouting numbers', () => {
+  it('shouting numbers', () => {
     const result = bob.hey('1, 2, 3 GO!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  xit('no letters', () => {
+  it('no letters', () => {
     const result = bob.hey('1, 2, 3')
     expect(result).toEqual('Whatever.')
   })
