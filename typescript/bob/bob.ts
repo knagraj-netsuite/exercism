@@ -2,6 +2,8 @@ class Bob {
 
   hey(arg1: string) : string {
 
+    arg1 = this.sanitizeInput(arg1);
+
     if (this.isAddressedButNotSayingAnything(arg1)) {
       return 'Fine. Be that way!';
     } else if (this.isYelling(arg1)) {
@@ -17,8 +19,12 @@ class Bob {
 
   }
 
+  private sanitizeInput(arg1: string) {
+    return arg1.trim();
+  }
+
   private isAddressedButNotSayingAnything(arg1: string) {
-    return arg1.trim().length === 0;
+    return arg1.length === 0;
   }
 
   private isYelling(arg1: string) {
