@@ -1,23 +1,23 @@
 import GradeSchool from './grade-school'
 
 describe('School', () => {
-  let gradeSchool: GradeSchool
+  let gradeSchool: GradeSchool;
 
   beforeEach(() => {
     gradeSchool = new GradeSchool()
-  })
+  });
 
   it('a new school has an empty roster', () => {
     expect(gradeSchool.studentRoster().size === 0).toEqual(true)
-  })
+  });
 
-  xit("A student can't be in two different grades", () => {
+  it("A student can't be in two different grades", () => {
     gradeSchool.addStudent('Aimee', 2)
     gradeSchool.addStudent('Aimee', 1)
 
     const emptyGrade = gradeSchool.studentsInGrade(2)
     expect(emptyGrade).toEqual([])
-  })
+  });
 
   xit('adding a student adds them to the roster for the given grade', () => {
     gradeSchool.addStudent('Aimee', 2)
