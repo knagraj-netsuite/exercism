@@ -1,8 +1,8 @@
 import Bob from './bob'
-import {IReactor} from "./bob";
+import {reactor} from "./bob";
 
 describe('Bob', () => {
-  const sureReactor: IReactor = {
+  const sureReactor: reactor = {
     shouldApply(arg: string): boolean {
       return arg.charAt(arg.length - 1) === '?';
     },
@@ -10,35 +10,7 @@ describe('Bob', () => {
       return 'Sure.';
     }
   }
-
-  const isYelling: IReactor = {
-    shouldApply(arg: string): boolean {
-      return arg.toUpperCase() === arg && /[A-Za-z]+/.test(arg);
-    },
-    apply(_arg: string): string {
-      return 'Whoa, chill out!';
-    }
-  }
-
-  const isYellingAndAskingQuestion: IReactor = {
-    shouldApply(arg: string): boolean {
-      return (arg.toUpperCase() === arg && /[A-Za-z]+/.test(arg)) && (arg.charAt(arg.length - 1) === '?');
-    },
-    apply(_arg: string): string {
-      return 'Calm down, I know what I\'m doing!';
-    }
-  }
-
-  const defaultReactor: IReactor = {
-    shouldApply(_arg: string): boolean {
-      return true;
-    },
-    apply(_arg: string): string {
-      return 'Whatever.';
-    }
-  }
-
-  const bob = new Bob([isYellingAndAskingQuestion, sureReactor, isYelling, defaultReactor]);
+  const bob = new Bob([sureReactor])
 
   it('stating something', () => {
     const result = bob.hey('Tom-ay-to, tom-aaaah-to.')
